@@ -1,5 +1,5 @@
                          <div class="container">
-                             <div id="register_employee_msg"></div>
+                             <div id="add_company_msg"></div>
                              <div class="card  border border-primary shadow-lg my-2 mx-auto mt-5" style="width: 70%;">
                                  <div class="card-body p-0">
                                      <!-- Nested Row within Card Body -->

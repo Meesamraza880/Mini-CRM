@@ -25,10 +25,11 @@ $("#add_company").submit(function (evt) {
     enctype: "multipart/form-data",
     processData: false,
     success: function (response) {
+      $("#co_dataTable").DataTable().ajax.reload();
       $("#add_company_msg").html(response);
       setTimeout(function () {
         $("#add_company_msg").html("");
-      }, 5000);
+      }, 10000);
 
       $("#add_company").trigger("reset");
     },
@@ -138,7 +139,7 @@ $("#update_company").submit(function (evt) {
       $("#company_table_msg").html(response);
       setTimeout(function () {
         $("#company_table_msg").html("");
-      }, 5000);
+      }, 10000);
 
       // $("#add_company").trigger("reset");
     },
@@ -182,7 +183,7 @@ $("#add_employee").submit(function (evt) {
       $("#register_employee_msg").html(response);
       setTimeout(function () {
         $("#register_employee_msg").html("");
-      }, 5000);
+      }, 10000);
 
       $("#add_employee").trigger("reset");
     },
@@ -308,7 +309,7 @@ $("#update_employee").submit(function (evt) {
       $("#employee_table_msg").html(response);
       setTimeout(function () {
         $("#employee_table_msg").html("");
-      }, 5000);
+      }, 10000);
       $("#update_employee").trigger("reset");
     },
   });
@@ -345,12 +346,11 @@ $("#sub_admin_add_employee").submit(function (evt) {
     enctype: "multipart/form-data",
     processData: false,
     success: function (response) {
-      // alert(response);
       $("#sub_admin_em_Table").DataTable().ajax.reload();
       $("#register_employee_sub_admin_msg").html(response);
       setTimeout(function () {
         $("#register_employee_sub_admin_msg").html("");
-      }, 5000);
+      }, 10000);
 
       $("#sub_admin_add_employee").trigger("reset");
     },
@@ -466,7 +466,7 @@ $("#update_sub_employee").submit(function (evt) {
       $("#sub_admin_em_msg").html(response);
       setTimeout(function () {
         $("#sub_admin_em_msg").html("");
-      }, 5000);
+      }, 10000);
       $("#update_sub_employee").trigger("reset");
     },
   });
@@ -486,83 +486,3 @@ function dele_sub_admin_employee(id) {
     },
   });
 }
-
-// $("#add_rec").submit(function (evt) {
-//   var obj = document.getElementById("add_rec");
-//   evt.preventDefault();
-//   var formData = new FormData(obj);
-//   formData.append("image", $("#formFile")[0].files[0]);
-
-//   $.ajax({
-//     url: "add_rec",
-//     method: "POST",
-//     data: formData,
-//     async: false,
-//     cache: false,
-//     contentType: false,
-//     enctype: "multipart/form-data",
-//     processData: false,
-//     success: function (response) {
-//       $("#add_rec").trigger("reset");
-//       alert(response);
-//     },
-//   });
-
-//   return false;
-// });
-
-// function show_users() {
-//   var id = $("#user_id").val();
-//   $.ajax({
-//     url: "show_user",
-//     method: "POST",
-//     data: {
-//       user_id: id,
-//     },
-//     success: function (response) {
-//       // console.log(response.recruites);
-//       $.each(response.recruites, function (key, value) {
-//         if (value["status"] == 1) {
-//           $("#show_user_list").append(
-//             "<tr>\
-//                         <td>" +
-//               value["first_name"] +
-//               "</td>\
-//                         <td>" +
-//               value["last_name"] +
-//               "</td>\
-//                         <td>" +
-//               value["email"] +
-//               "</td>\
-//                         <td>" +
-//               value["password"] +
-//               "</td>\
-//                         <td>" +
-//               value["landline"] +
-//               '</td>\
-//                         <td><a href="Edit/' +
-//               value["id"] +
-//               '">Edit</a></td>\
-//                         <td><a href="Delete/' +
-//               value["id"] +
-//               '">Delete</a></td>\
-//                          </tr >'
-//           );
-//         }
-//       });
-//     },
-//   });
-// }
-
-// function edit_user(id) {
-//   $.ajax({
-//     url: "edit",
-//     method: "POST",
-//     data: {
-//       user_id: id,
-//     },
-//     success: function (response) {
-//       alert(response);
-//     },
-//   });
-// }

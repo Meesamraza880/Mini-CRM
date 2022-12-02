@@ -1,11 +1,19 @@
 <div class="container">
     <?php
-    session()->get('isLoggedIn');
+
     if (session()->getFlashdata('msg')) : ?>
         <div class="alert alert-warning" style="text-align: center;">
             <?= session()->getFlashdata('msg') ?>
         </div>
     <?php endif; ?>
+    <?php
+
+    if (session()->getFlashdata('success_msg')) : ?>
+        <div class="alert alert-success" style="text-align: center;">
+            <?= session()->getFlashdata('success_msg') ?>
+        </div>
+    <?php endif; ?>
+
     <center>
         <h1 style="color: red;"> <?php echo (isset($msg)) ? $msg : "" ?></h1>
     </center>
@@ -16,9 +24,7 @@
 
                 <div class="col-lg-12 mx-auto">
                     <div class="p-5">
-                        <!-- <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">LogIn</h1>
-                        </div> -->
+
                         <form class="row g-3 d-flex justify-content-center Cform needs-validation p-3" method="POST" action="login_process" id="loginform" novalidate>
                             <div class="col-10 col-sm-8 col-md-8 text-center Cfont">
                                 <h1>LogIn</h1>

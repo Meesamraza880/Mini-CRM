@@ -1,95 +1,3 @@
-<!-- <div class="container">
-    <div class="col-2 float-end">
-        <a href="/logout"><button class="btn btn-secondary shadow">Logout</button></a>
-    </div>
-    <?php
-
-    //print_r(session()->get('user_login'));
-    ?>
-    <form class="row g-3 mt-5 d-flex justify-content-center Cform needs-validation" id="signup_form" enctype="multipart/form-data">
-
-        <div class="col-sm-12 Cfont text-center">
-
-            <h1>Add Employee</h1>
-        </div>
-        <div class=" col-sm-6">
-
-            <input type="text" class="form-control form_data" id="fname" placeholder="First name" name="fname" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-sm-6">
-
-            <input type="text" class="form-control form_data" id="validationCustom02" placeholder="Last name" name="lname" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-12">
-            <div class="input-group has-validation">
-                <span class="input-group-text Cfont" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control form_data" id="validationCustomUsername" placeholder="Email" name="email" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Please choose a email.
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-12">
-
-            <input type="text" class="form-control form_data" id="validationCustom03" placeholder="Phone" name="phone" required>
-            <div class="invalid-feedback">
-                Please choose a password.
-            </div>
-        </div> -->
-
-
-<!-- <div class="col-sm-4">
-            <small class="Cfont">Landline</small>
-            <input type="text" class="form-control text-secondary form_data" id="validationCustom03" name="landline" required>
-            <div class="invalid-feedback">
-                Please choose a landline.
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <small class="Cfont">ID card number</small>
-            <input type="text" class="form-control text-secondary form_data" id="validationCustom03" name="card_number" required>
-            <div class="invalid-feedback">
-                Please choose a ID card number.
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <small class="Cfont">Bank Name</small>
-            <input type="text" class="form-control text-secondary form_data" id="validationCustom03" name="bank_name" required>
-            <div class="invalid-feedback">
-                Please choose a bank name.
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <label for="formFile" class="form-label Cfont">Upload Image</label>
-            <input class="form-control text-secondary" type="file" name="upload" id="formFile" id="validationCustom03">
-        </div>
-        <div class="form-floating text-secondary">
-            <textarea class="form-control form_data" name="address" id="validationCustom03" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Address</label>
-        </div> -->
-
-<!-- <div class="col-12 col-sm-12">
-
-            <button class="btn btn-success float-end mx-3 shadow" type="submit" name="register">ADD</button>
-            
-
-        </div>
-
-    </form>
-</div> -->
-
-
-
-
-
-
-
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -114,11 +22,6 @@
                             <span>Dashboard</span></a>
                     </li>
 
-                    <!-- <li class="nav-item active"> -->
-                    <!-- <button class="nav-link active bg-primary border-0" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"></button> -->
-                    <!-- <a class="nav-link bg-primary border-0" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"></a> -->
-
-                    <!-- </li> -->
                     <!-- Nav Item - Dashboard -->
 
 
@@ -132,24 +35,7 @@
                     <!-- Divider -->
                     <hr class="sidebar-divider">
 
-                    <!-- Nav Item - Pages Collapse Menu -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link border border-0 collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                            <i class="fas fa-fw fa-folder"></i>
-                            <span>Pages</span>
-                        </a>
-                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Register Employees</h6>
-                               
-                                <a class="collapse-item" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-register" role="tab" aria-controls="nav-contact" aria-selected="false">Register</a>
-                                <h6 class="collapse-header">Register company</h6>
-                                
-                                <a class="collapse-item" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-add-company" role="tab" aria-controls="nav-contact" aria-selected="false">company</a>
 
-                            </div>
-                        </div>
-                    </li> -->
 
                     <!-- Nav Item - Tables -->
                     <li class="nav-item">
@@ -361,14 +247,6 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <!-- <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
-                            </a> -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -467,17 +345,7 @@
 
 
             </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <!-- <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer> -->
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->

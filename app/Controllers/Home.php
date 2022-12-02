@@ -12,7 +12,7 @@ class Home extends BaseController
 
     public function index()
     {
-        // $this->load->helper("url");
+
         return view('header.php') . view('welcome_message.php') . view('footer.php');
     }
     public function login()
@@ -61,9 +61,6 @@ class Home extends BaseController
             $session->setFlashdata('msg', 'Email does not exist.');
             return $this->response->redirect('/');
         }
-
-        // return $this->response->redirect('/admin_dashboard');
-        // return $this->response->redirect('/sub_admin_dashboard');
     }
     public function forget_pass()
     {
@@ -71,14 +68,39 @@ class Home extends BaseController
     }
     public function forget_process()
     {
-
-        echo "forget processs is ok";
-        print_r($_REQUEST);
-        return $this->response->redirect('/new_pass');
+        $userModel = new UserModel();
+        $email = $this->request->getVar('email');
+        $data = $userModel->where('email', $email)->first();
+        if ($data) {
+            session()->setFlashdata('user_id', $data['user_id']);
+            return $this->response->redirect('/new_pass');
+        } else {
+            session()->setFlashdata('forget_msg', 'Please insert valid email.');
+            return $this->response->redirect('/forget_pass');
+        }
     }
     public function new_pass()
     {
         return view('header') . view('new_password') . view('footer');
+    }
+    public function new_pass_process()
+    {
+        $userModel = new UserModel();
+        $pass = $this->request->getVar('password');
+        $cpass = $this->request->getVar('Cpassword');
+        $id = $this->request->getVar();
+        if ($pass == $cpass) {
+            $final_pass = password_hash($cpass, PASSWORD_DEFAULT);
+            $data = [
+                'password'  => "$final_pass",
+            ];
+            $userModel->update($id, $data);
+            session()->setFlashdata('success_msg', 'Your password updated successfully');
+            return $this->response->redirect('/');
+        } else {
+            session()->setFlashdata('new_pass_msg', 'Password not match with confirm password Please insert again email.');
+            return $this->response->redirect('/forget_pass');
+        }
     }
     public function admin_dashboard()
     {
